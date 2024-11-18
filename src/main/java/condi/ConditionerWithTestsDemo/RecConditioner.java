@@ -12,21 +12,19 @@ public class RecConditioner {
     }
 
     @GetMapping("/calc")
-    public String resultOfTemp(String t, String tNew, String mode, Model m)throws Exception{
+    public String resultOfTemp(String t, String tNew, String mode, Model m) throws Exception {
         try {
             int t1 = Integer.parseInt(t);
             int t2 = Integer.parseInt(tNew);
 
-                    m.addAllAttributes("tempResult", Integer.parseInt(t),Integer.parseInt(tNew),String mode);
+            m.addAttribute("tempResult", Conditioner.getResultTemp(t1, t2, mode));
 
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
 
-
-    }
-
-    }
+    return "conditioner";}
 }
+
+
