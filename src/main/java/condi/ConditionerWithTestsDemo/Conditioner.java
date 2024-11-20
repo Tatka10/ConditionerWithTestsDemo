@@ -1,6 +1,11 @@
 package condi.ConditionerWithTestsDemo;
 
 public class Conditioner {
+    @Override
+    public String toString() {
+        return "Conditioner{}";
+    }
+
     public static int getResultTemp(int t1, int t2, String mode) throws Exception {
         switch (mode){
             case "fan": return fan(t1, t2);

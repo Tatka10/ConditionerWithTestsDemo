@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 @Component
 public class CondService {
-    ArrayList<Conditioner> listCondi = new ArrayList<>();
+    static ArrayList<Conditioner> listCondi = new ArrayList<>();
 
-    public void add(Conditioner c) {
+    public static void add(Conditioner c) {
         listCondi.add(c);
     }
 
