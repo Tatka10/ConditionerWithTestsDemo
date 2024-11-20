@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 <form action="/calc">
-    t сейчас <input name="t1">
+    t в комнате      <input name="t1">
     <br>
-    t потом <input name="t2">
     <br>
-    режим кондиционера <input name="mode">
+    t ожидаемая <input name="t2">
+    <br>
+    режим кондиционера:fan, auto, freeze, heat
+    <input name="mode">
+    <button> Посчитать итоговую температуру </button>
     </form>
+
+<p th:if="${tempResult!=null}"> Итоговая температура = <span th:text="${tempResult}"></span></p>
+<div th:if="${mistake!=null}"> Ошибка <span th:text="${mistake}"></span></div>
+
 
 </form>
 

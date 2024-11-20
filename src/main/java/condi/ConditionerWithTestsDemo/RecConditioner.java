@@ -14,23 +14,16 @@ public class RecConditioner {
     }
 
     @GetMapping("/calc")
-    public String resultOfTemp(String t1, String t2, String mode, Model m)throws Exception{
+    public String resultOfTemp(String t1, String t2, String mode, Model m) throws Exception {
         try {
             int t = parseInt(t1);
             int tNew = parseInt(t2);
-
-
-
-                    m.addAllAttributes("tempResult",  int t, int tNew
-
-        }
-        catch(Exception e){
+            m.addAttribute("tempResult", Conditioner.getResultTemp(t, tNew, mode));
+        } catch (Exception e) {
             System.out.println(e.getMessage());
+            m.addAttribute("mistake",e.getMessage());
         }
-
-
-
+        return "conditioner";
     }
 
-    }
 }
