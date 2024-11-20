@@ -6,21 +6,26 @@
 </head>
 <body>
 <form action="/calc">
-    t в комнате      <input name="t1">
+    t в комнате <input name="t1">
     <br>
     <br>
     t ожидаемая <input name="t2">
     <br>
     режим кондиционера:fan, auto, freeze, heat
     <input name="mode">
-    <button> Посчитать итоговую температуру </button>
-    </form>
+    <button> Посчитать итоговую температуру</button>
+</form>
 
 <p th:if="${tempResult!=null}"> Итоговая температура = <span th:text="${tempResult}"></span></p>
 <div th:if="${mistake!=null}"> Ошибка <span th:text="${mistake}"></span></div>
-
-
+</form>
+<br>
+<form action="/history">
+    <button> Показать список ранее введенных температур и режимов </button>
 </form>
 
+
+<a href="history.html"> Показать список ранее введенных температур и режимов </a>
+<p th:if="${historyCond!=null}"><span th:text="${historyCond}"></span></p>
 </body>
 </html>
