@@ -25,8 +25,8 @@ public class RecConditioner {
             int t = parseInt(t1);
             int tNew = parseInt(t2);
             m.addAttribute("tempResult", Conditioner.getResultTemp(t, tNew, mode));
-            Conditioner c = new Conditioner();
-            CondService.add(c);
+            String [] temp = new String[]{t1, t2, mode};
+            CondService.add(temp);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             m.addAttribute("mistake", e.getMessage());
