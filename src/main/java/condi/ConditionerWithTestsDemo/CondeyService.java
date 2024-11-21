@@ -1,5 +1,7 @@
 package condi.ConditionerWithTestsDemo;
+
 import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -14,16 +16,15 @@ public class CondService {
     public static void saveAllValues(Temperature t, String mode) {
         list.put(mode, t);
     }
-    public void save(){
-String fname="temp_mode_data.txt";
-List<String> lines=list.entrySet().stream().map(y->y.setValue()+";"+y.getT()+)
+
+    public void save() {
+        String fname = "temp_mode_data.txt";
+        List<String> lines =
     }
 }
 
 
 
-public String[] getListCondi() {
-    return listCondi;
 
-}
+
 
