@@ -31,6 +31,7 @@ public class RecConditioner {
             System.out.println(e.getMessage());
             m.addAttribute("mistake", e.getMessage());
         }
+
         return "conditioner";
     }
 
