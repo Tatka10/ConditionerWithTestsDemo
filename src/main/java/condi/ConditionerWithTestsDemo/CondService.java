@@ -2,9 +2,7 @@ package condi.ConditionerWithTestsDemo;
 
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import static java.util.Arrays.stream;
@@ -13,13 +11,14 @@ import static java.util.Arrays.stream;
 public class CondService {
     static Map<String, Temperature> list = new LinkedHashMap<>();
 
-    public static void saveAllValues(Temperature t, String mode) {
+    public static Map<String, Temperature> add(String mode, Temperature t) {
         list.put(mode, t);
+        return list;
     }
 
     public void save() {
         String fname = "temp_mode_data.txt";
-        List<String> lines =
+
     }
 }
 

@@ -25,8 +25,9 @@ public class RecConditioner {
             int t = parseInt(t1);
             int tNew = parseInt(t2);
             m.addAttribute("tempResult", Conditioner.getResultTemp(t, tNew, mode));
-            String [] temp = new String[]{t1, t2, mode};
-            CondService.add(temp);
+            Temperature temp = new Temperature(t1, t2);
+            CondService.add(mode, temp);
+            System.out.println(mode +" "+ temp);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             m.addAttribute("mistake", e.getMessage());
@@ -37,7 +38,7 @@ public class RecConditioner {
 
     @GetMapping("/history")
     public String historyOfTemp(Model m) {
-        m.addAttribute("historyCond", condService.getListCondi().toString());
+        //m.addAttribute("historyCond", condService.getListCondi().toString());
         return "conditioner";
 
     }
